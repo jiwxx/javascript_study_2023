@@ -40,7 +40,7 @@
             <li>
                 <span class="sub_title">보유</span>
                 <span class="sub_contents">
-                    <input type="text" id="user_point" readonly>
+                    <input type="text" id="user_point">
                     <span class="won">원</span>
                 </span>
             </li>
@@ -55,5 +55,16 @@
         </ul>
         <button type="button" id="point_all_btn">전액사용</button>
     </div>
+    <script>
+        const userPoint = document.querySelector('#user_point')
+        const point = document.querySelector('#use_point')
+        const resetBtn = document.querySelector('#poin_reset')
+        const allBtn = document.querySelector('#point_all_btn')
+        console.log(userPoint,point,resetBtn,allBtn)
+        
+        resetBtn.addEventListener('click',function(){
+            
+        })
+    </script>
 </body>
 </html>
