@@ -40,7 +40,7 @@
             <li>
                 <span class="sub_title">보유</span>
                 <span class="sub_contents">
-                    <input type="text" id="user_point">
+                    <input type="text" id="user_point" readonly>
                     <span class="won">원</span>
                 </span>
             </li>
@@ -62,9 +62,10 @@
         const allBtn = document.querySelector('#point_all_btn')
         console.log(userPoint,point,resetBtn,allBtn)
         
+        userPoint.innerHTML = '1000'
         resetBtn.addEventListener('click',function(){
             
-        })
+            })
     </script>
 </body>
 </html>

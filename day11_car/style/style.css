@@ -30,7 +30,7 @@ main #video .tab_title a {
     padding:20px 30px;
 }
 main #video .tab_title .active {
-    border-bottom: 5px solid #189bfa; width:100px;
+    border-bottom: 5px solid #189bfa;
 }
 main #video .tab_contents {
     
@@ -38,6 +38,7 @@ main #video .tab_contents {
 main #video .tab_contents .tab_c1 {
     position:relative;
 }
+/*탭 제목 활성화 디자인 + js class 호출용 */
 main #video .tab_contents .active {}
 main #video .tab_contents .tab_c1 video {
     width:80%; margin:0 auto;
