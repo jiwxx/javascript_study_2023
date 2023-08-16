@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <title>day12-dom</title>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="box1">
+        <div id="box2">
+            <p class="p">1</p>
+            <p class="p">2</p>
+            <p class="p">3</p>
+        </div>
+    </div>
+    <script>
+        //변수
+        const box1 = document.querySelector('#box1')
+        const box2 = document.querySelector('#box2')
+        const p = document.querySelectorAll('.p')
+        console.log(box1,box2,p)
+        //DOM 제어
+        //1. DOM생성 createElement()
+        const span = document.createElement('span')
+        span.innerHTML = '로그인 실패했습니다.'
+        console.log(span)
+        p[2].appendChild(span)
+        //2. DOM 부모선택법 >> 자식.parentNode -> 자식의 부모 노드를 인식한다.
+        console.log(p[0].parentNode) //#box2
+        //main p span {}
+        console.log(p[0].parentNode.parentNode)//#box1 p의 부모의 부모
+        p[0].parentNode.style.backgroundColor = 'aqua' //객체 선택법
+        //3. DOM 형제선택법
+        //이전 형제 >> 기준대상.previousElementSibling
+        //다음 형제 >> 기준대상.nextElementSibling
+        console.log(p[1].previousElementSibling)//p1
+        console.log(p[1].nextElementSibling)//p3 -> 두번째 p를 기준으로 이전, 다음형제
+        console.log(p[0].nextElementSibling.nextElementSibling)
+        p[1].nextElementSibling.style.color = 'red'
+        //4. DOM자식선택법
+        //기준 -> 부모.childNodes 공백함 자식선택
+        //기준 -> childNodes 요소만 인식(공백포험)
+        //기준 -> 부모.firstChild 첫번째 자식 인식(공백x)
+        //기준 -> 부모.lastChild 마지막 자식 인식(공백포함)
+        //부모.lastEmenetChild 마지막 자식 인식 (공백x)
+        console.log(box2.childNodes)
+        console.log(box2.children) //p*3
+        console.log(box2.firstElementChild)//p1
+        console.log(box2.lastElementChild)//p3
+        box2.firstElementChild.style.border ='2px solid #000'
+        //children 모든 자식 p한테 글자 크기 2rem
+        for(let i of box2.children) { //for문
+            i.style.fontSize = '2rem'
+        }
+        
+    </script>
+</body>
+</html>
